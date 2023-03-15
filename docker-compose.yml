@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+   metricbeat:
+      image: docker.elastic.co/beats/metricbeat:8.6.2-amd64
+      labels: 
+         author: "Vectra - houston.santos@vectracs.com.br"
+      container_name: metricbeat
+      restart: on-failure
+      environment:
+         TZ: "America/Recife"
+      user: root
+      command: metricbeat -e -strict.perms=false
+      healthcheck:
+         test: metricbeat -strict.perms=false test config
+      volumes:
+         - ./metricbeat.yml:/usr/share/metricbeat/metricbeat.yml:ro
+      networks:
+         - beats
+         - databases
+
+networks: 
+   beats:
+      name: beats
+   databases:
+      external: true

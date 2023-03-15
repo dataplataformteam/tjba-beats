@@ -17,10 +17,7 @@ services:
          - ./metricbeat.yml:/usr/share/metricbeat/metricbeat.yml:ro
       networks:
          - beats
-         - databases
 
 networks: 
    beats:
       name: beats
-   databases:
-      external: true

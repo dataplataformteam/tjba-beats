@@ -16,7 +16,7 @@ docker-compose up -d
 
 ### Conjunto de métricas de instruções PostgreSQL
 
->⚠️ Habilitar este recurso aumentara o uso de memória do servidor.
+>⚠️ Habilitar este recurso aumentará o uso de memória do servidor.
 
 Para habilitar a coleta de métricas de intruções deseve-se esecutar os seguintes comandos(terminal postgresql) abaixo para configurar às variáveis e criar a extension:
 
